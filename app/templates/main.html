@@ -4,6 +4,21 @@
         <title>Calendar</title>
     </head>
     <body>
-        <h1>Calendar Working</h1>
+        <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Start</th>
+                <th>End</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for appointment in rows %}
+                <p>{{ appointment.name }}</p>
+                <p>{{ appointment.start_datetime.strfttime("%H:%M") }}</p>
+                <p>{{ appointment.end_datetime.strfttime("%H:%M") }}</p>
+                {% endfor %}
+            </tbody>
+          </table>
     </body>
 </html>
